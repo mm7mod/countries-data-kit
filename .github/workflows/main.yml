@@ -23,13 +23,8 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: |
-          if [ ! -f pnpm-lock.yaml ]; then
-            echo "pnpm-lock.yaml not found, running pnpm install without --frozen-lockfile"
-            pnpm install
-          else
-            pnpm install --frozen-lockfile
-          fi
+        run:  pnpm install
+         
 
       - name: Run lint and build
         run: |
