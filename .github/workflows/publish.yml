@@ -35,14 +35,19 @@ jobs:
       - name: Install dependencies
         run: pnpm install 
 
-      - name: Check Changesets Status
-        run: pnpm changeset status
+      # - name: Check Changesets Status
+      #   run: pnpm changeset status
 
-      - name: Create Release Pull Request or Publish
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: pnpm run release
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish to npm
+            run: npm publish
+            env:
+              NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # - name: Create Release Pull Request or Publish
+      #   id: changesets
+      #   uses: changesets/action@v1
+      #   with:
+      #     publish: pnpm run release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.PAT }}
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
