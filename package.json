@@ -1,0 +1,21 @@
+{
+  "name": "countries-data-kit",
+  "version": "1.0.0",
+  "description": "this is a package for countries data ",
+  "main": "dist/CountryDetails.js",
+  "module": "dist/CountryDetails.mjs",
+  "types": "dist/CountryDetails.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "lint": "tsc",
+    "release": "pnpm run build && changeset publish"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "jsonminify": "^0.4.2",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
+  }
+}

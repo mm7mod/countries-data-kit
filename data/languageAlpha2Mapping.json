@@ -1,0 +1,483 @@
+{
+  "English": [
+    "US",
+    "GB",
+    "CA",
+    "AU",
+    "NZ",
+    "IE",
+    "JM",
+    "ZW",
+    "KE",
+    "NG",
+    "GH",
+    "ZA",
+    "BZ",
+    "BB",
+    "TT",
+    "FJ",
+    "NA",
+    "AS",
+    "AI",
+    "AG",
+    "BS",
+    "BM",
+    "IO",
+    "KY",
+    "DM",
+    "FK",
+    "GM",
+    "GI",
+    "GD",
+    "GU",
+    "GG",
+    "GY",
+    "HK",
+    "IM",
+    "JE",
+    "KI",
+    "LS",
+    "LR",
+    "MO",
+    "MW",
+    "MT",
+    "MH",
+    "MS",
+    "NR",
+    "NU",
+    "NF",
+    "MP",
+    "PW",
+    "PN",
+    "PR",
+    "KN",
+    "LC",
+    "VC",
+    "WS",
+    "SL",
+    "SB",
+    "TC",
+    "TV",
+    "UM",
+    "VG",
+    "VI",
+    "CX",
+    "CC",
+    "CK",
+    "SZ",
+    "HM",
+    "SH"
+  ],
+  "French": [
+    "FR",
+    "CA",
+    "BE",
+    "CH",
+    "LU",
+    "MC",
+    "BF",
+    "BI",
+    "BJ",
+    "CF",
+    "CG",
+    "CD",
+    "CI",
+    "DJ",
+    "GA",
+    "GN",
+    "MG",
+    "ML",
+    "NE",
+    "SN",
+    "TG",
+    "VU",
+    "CM",
+    "KM",
+    "RW",
+    "SC",
+    "BQ",
+    "DM",
+    "GP",
+    "HT",
+    "MQ",
+    "MF",
+    "PM",
+    "RE",
+    "BL",
+    "PF",
+    "TF",
+    "WF",
+    "YT",
+    "MU"
+  ],
+  "Spanish": [
+    "ES",
+    "MX",
+    "AR",
+    "BO",
+    "CL",
+    "CO",
+    "CR",
+    "CU",
+    "DO",
+    "EC",
+    "SV",
+    "GQ",
+    "GT",
+    "HN",
+    "NI",
+    "PA",
+    "PY",
+    "PE",
+    "UY",
+    "VE",
+    "GF",
+    "HN"
+  ],
+  "Arabic": [
+    "SA",
+    "EG",
+    "DZ",
+    "SD",
+    "IQ",
+    "JO",
+    "KW",
+    "LB",
+    "LY",
+    "MA",
+    "OM",
+    "QA",
+    "SY",
+    "AE",
+    "YE",
+    "BH",
+    "DJ",
+    "KM",
+    "MR",
+    "SO",
+    "PS",
+    "TD",
+    "EH",
+    "TN"
+  ],
+  "Portuguese": [
+    "PT",
+    "BR",
+    "AO",
+    "MZ",
+    "CV",
+    "GW",
+    "TL",
+    "ST"
+  ],
+  "Russian": [
+    "RU",
+    "BY",
+    "KZ",
+    "KG",
+    "MD",
+    "UA"
+  ],
+  "Chinese": [
+    "CN",
+    "SG",
+    "MY",
+    "TW"
+  ],
+  "Hindi": [
+    "IN"
+  ],
+  "German": [
+    "DE",
+    "AT",
+    "CH",
+    "LI",
+    "LU",
+    "BE"
+  ],
+  "Dutch": [
+    "NL",
+    "BE",
+    "SR",
+    "AW",
+    "SX",
+    "CW"
+  ],
+  "Italian": [
+    "IT",
+    "CH",
+    "SM",
+    "VA"
+  ],
+  "Japanese": [
+    "JP"
+  ],
+  "Korean": [
+    "KR",
+    "KP"
+  ],
+  "Turkish": [
+    "TR",
+    "CY"
+  ],
+  "Swedish": [
+    "SE",
+    "FI",
+    "AX"
+  ],
+  "Norwegian": [
+    "NO",
+    "BV",
+    "SJ"
+  ],
+  "Danish": [
+    "DK",
+    "FO",
+    "GL"
+  ],
+  "Finnish": [
+    "FI"
+  ],
+  "Greek": [
+    "GR",
+    "CY"
+  ],
+  "Hungarian": [
+    "HU"
+  ],
+  "Czech": [
+    "CZ"
+  ],
+  "Slovak": [
+    "SK"
+  ],
+  "Polish": [
+    "PL"
+  ],
+  "Romanian": [
+    "RO",
+    "MD"
+  ],
+  "Bulgarian": [
+    "BG"
+  ],
+  "Croatian": [
+    "HR"
+  ],
+  "Serbian": [
+    "RS",
+    "ME"
+  ],
+  "Bosnian": [
+    "BA"
+  ],
+  "Slovenian": [
+    "SI"
+  ],
+  "Macedonian": [
+    "MK"
+  ],
+  "Albanian": [
+    "AL",
+    "XK"
+  ],
+  "Lithuanian": [
+    "LT"
+  ],
+  "Latvian": [
+    "LV"
+  ],
+  "Estonian": [
+    "EE"
+  ],
+  "Ukrainian": [
+    "UA"
+  ],
+  "Georgian": [
+    "GE"
+  ],
+  "Armenian": [
+    "AM"
+  ],
+  "Azerbaijani": [
+    "AZ"
+  ],
+  "Kazakh": [
+    "KZ"
+  ],
+  "Uzbek": [
+    "UZ"
+  ],
+  "Turkmen": [
+    "TM"
+  ],
+  "Kyrgyz": [
+    "KG"
+  ],
+  "Tajik": [
+    "TJ"
+  ],
+  "Mongolian": [
+    "MN"
+  ],
+  "Malay": [
+    "MY",
+    "BN",
+    "SG"
+  ],
+  "Thai": [
+    "TH"
+  ],
+  "Vietnamese": [
+    "VN"
+  ],
+  "Filipino": [
+    "PH"
+  ],
+  "Indonesian": [
+    "ID"
+  ],
+  "Swahili": [
+    "KE",
+    "TZ",
+    "UG"
+  ],
+  "Afrikaans": [
+    "ZA",
+    "NA"
+  ],
+  "Amharic": [
+    "ET"
+  ],
+  "Somali": [
+    "SO"
+  ],
+  "Zulu": [
+    "ZA"
+  ],
+  "Shona": [
+    "ZW"
+  ],
+  "Oromo": [
+    "ET"
+  ],
+  "Tigrinya": [
+    "ER"
+  ],
+  "Khmer": [
+    "KH"
+  ],
+  "Lao": [
+    "LA"
+  ],
+  "Burmese": [
+    "MM"
+  ],
+  "Sinhala": [
+    "LK"
+  ],
+  "Tamil": [
+    "LK",
+    "SG"
+  ],
+  "Nepali": [
+    "NP"
+  ],
+  "Dzongkha": [
+    "BT"
+  ],
+  "Pashto": [
+    "AF"
+  ],
+  "Farsi": [
+    "IR"
+  ],
+  "Hebrew": [
+    "IL"
+  ],
+  "Urdu": [
+    "PK"
+  ],
+  "Bengali": [
+    "BD"
+  ],
+  "Marathi": [
+    "IN"
+  ],
+  "Punjabi": [
+    "IN",
+    "PK"
+  ],
+  "Gujarati": [
+    "IN"
+  ],
+  "Telugu": [
+    "IN"
+  ],
+  "Kannada": [
+    "IN"
+  ],
+  "Malayalam": [
+    "IN"
+  ],
+  "Oriya": [
+    "IN"
+  ],
+  "Assamese": [
+    "IN"
+  ],
+  "Maithili": [
+    "IN"
+  ],
+  "Santali": [
+    "IN"
+  ],
+  "Sindhi": [
+    "PK"
+  ],
+  "Kurdish": [
+    "IQ",
+    "TR",
+    "IR",
+    "SY"
+  ],
+  "Catalan": [
+    "AD"
+  ],
+  "Setswana": [
+    "BW"
+  ],
+  "Icelandic": [
+    "IS"
+  ],
+  "Dhivehi": [
+    "MV"
+  ],
+  "Nauruan": [
+    "NR"
+  ],
+  "Tok Pisin": [
+    "PG"
+  ],
+  "Samoan": [
+    "WS"
+  ],
+  "Tongan": [
+    "TO"
+  ],
+  "Tetum": [
+    "TL"
+  ],
+  "Shikomoro": [
+    "KM"
+  ],
+  "Cook Islands Māori": ["CK"],
+  "Swati": ["SZ"],
+  "Chuukese": ["FM"],
+  "Pohnpeian": ["FM"],
+  "Kosraean": ["FM"],
+  "Yapese": ["FM"],
+  "Bemba": ["ZM"],
+  "English (Zambia)": ["ZM"],
+  "English (New Zealand)": ["TK"]
+}
