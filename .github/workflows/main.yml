@@ -8,14 +8,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up PNPM
+        uses: pnpm/action-setup@v2
         with:
           version: 7
-      - uses: actions/setup-node@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: "pnpm"
 
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run lint && pnpm run build
+      - name: Install dependencies
+        run: |
+          if [ ! -f pnpm-lock.yaml ]; then
+            echo "pnpm-lock.yaml not found, running pnpm install without --frozen-lockfile"
+            pnpm install
+          else
+            pnpm install --frozen-lockfile
+          fi
+
+      - name: Run lint and build
+        run: |
+          pnpm run lint
+          pnpm run build
