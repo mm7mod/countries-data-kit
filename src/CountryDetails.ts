@@ -1,22 +1,17 @@
+import { countries, CFields, SFields } from "./dataMappings";
 import { getFilteredAlpha2Codes } from "./getAlpha2CodeFromFilters";
-import { countries, CountryInfoFields } from "./types";
+
 
 interface GetCountriesParams {
-    fields?: CountryInfoFields[] | string[] | CountryInfoFields | string;
-    filters?: { [key in CountryInfoFields]?: (string[] | string) } | { [key in string]: (string[] | string) };
+    fields?: CFields[];
+    filters?: { [key in CFields]: string[] | string } | [string];
 }
 
 type CountryData = {
-    [key in CountryInfoFields]: string | string[] | { [key: string]: string };
+    [key in CFields]: (string | string[] | { [key: string]: string });
 };
 
 
-/**
- * Retrieves country data based on the specified fields and filters.
- * 
- * @param {GetCountriesParams} [options] - Options to filter and select specific fields of country data.
- * @returns {Partial<CountryData>[]} - An array of objects containing the filtered country data.
- */
 export default function getCountries(options?: GetCountriesParams): Partial<CountryData>[] {
     if (!options)
         return getAllCountriesFullData();
@@ -32,12 +27,23 @@ export default function getCountries(options?: GetCountriesParams): Partial<Coun
 
 
     if (filters && !fields) {
-        let validFilters = getFilteredAlpha2Codes(filters);
+        let validFilters: string[] = [];
+        if (Array.isArray(filters)) {
+            validFilters = filters.flat();
+        } else {
+            validFilters = getFilteredAlpha2Codes(filters);
+        }
+
         return getCertainCountriesFullData(validFilters);
     }
 
     if (filters && fields) {
-        let validFilters = getFilteredAlpha2Codes(filters);
+        let validFilters: string[] = [];
+        if (Array.isArray(filters)) {
+            validFilters = filters.flat();
+        } else {
+            validFilters = getFilteredAlpha2Codes(filters);
+        }
         return getCertailCountriesFilteredData(validFilters, fields);
     }
     return []
@@ -59,7 +65,7 @@ function getAllCountriesFullData(): CountryData[] {
 }
 
 function getAllCountriesFilteredData(
-    fields: CountryInfoFields[] | string[] | CountryInfoFields | string
+    fields: CFields[] | string[] | CFields | string
 ): Partial<CountryData>[] {
 
     let details: Partial<CountryData>[] = [];
@@ -75,7 +81,7 @@ function getAllCountriesFilteredData(
 
 function getCertailCountriesFilteredData(
     Alpha2Codes: string[],
-    fields: CountryInfoFields[] | string[] | CountryInfoFields | string
+    fields: CFields[] | string[] | CFields | string
 ): Partial<CountryData>[] {
 
     let details: Partial<CountryData>[] = [];
@@ -91,7 +97,7 @@ function getCertailCountriesFilteredData(
 
 function getCountryFilteredData(
     Alpha2Code: string,
-    fields: CountryInfoFields[] | string[] | CountryInfoFields | string
+    fields: CFields[] | string[] | CFields | string
 ): Partial<CountryData> | undefined {
 
     let countryData = getCountryFullData(Alpha2Code);
@@ -103,8 +109,8 @@ function getCountryFilteredData(
     const fieldsArray = Array.isArray(fields) ? fields : [fields];
 
     fieldsArray.forEach(field => {
-        if (countryData[field as CountryInfoFields] !== undefined) {
-            details[field as CountryInfoFields] = countryData[field as CountryInfoFields];
+        if (countryData[field as CFields] !== undefined) {
+            details[field as CFields] = countryData[field as CFields];
         }
     });
     if (Object.keys(details).length === 0) {
@@ -114,7 +120,7 @@ function getCountryFilteredData(
 }
 
 
-type CountryAlpha2Code = keyof typeof countries;
+type CountryAlpha2Code = string;
 function isCountryAlpha2Code(code: string): code is CountryAlpha2Code {
     return code in countries;
 }
@@ -128,3 +134,7 @@ function getCountryFullData(Alpha2Code: string): CountryData | undefined {
 }
 
 
+export {
+    CFields,
+    SFields
+}

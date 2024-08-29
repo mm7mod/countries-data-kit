@@ -157,7 +157,7 @@
     "Niamey": "NE",
     "Abuja": "NG",
     "Alofi": "NU",
-    "Kingston": "NF",
+    "Kingston": ["NF", "JM"],
     "Skopje": "MK",
     "Saipan": "MP",
     "Oslo": "NO",
@@ -241,5 +241,8 @@
     "Sana'a": "YE",
     "Lusaka": "ZM",
     "Harare": "ZW",
-    "Mariehamn": "AX"
+    "Mariehamn": "AX",
+    "King Edward Point": ["AQ"],
+    "Bouvet Island": ["BV"],  
+    "None": ["HM","TK","UM"]
   }  

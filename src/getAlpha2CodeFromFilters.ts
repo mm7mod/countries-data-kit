@@ -1,8 +1,8 @@
-import { CountryInfoFields, valuesAlpha2MappingFiles } from "./types";
+import { CFields, valuesAlpha2MappingFiles } from "./dataMappings";
 
-type searchItemsType =
-    { [key in Partial<CountryInfoFields>]: string[] | string }
-    | { [key in string]: string[] | string };
+
+type searchItemsType = { [key in  CFields]: string[] | string }
+
 
 type ValidFilter = {
     key: string;
@@ -24,19 +24,18 @@ export function getFilteredAlpha2Codes(filters: searchItemsType): string[] {
 
     // Iterate over the valid filters
     validFilters.forEach(({ key: filterKey, value: filterValues }) => {
-        const filterKeyAlpha2MappingFile = valuesAlpha2MappingFiles[filterKey];
+        const filterKeyAlpha2MappingFile = valuesAlpha2MappingFiles[filterKey]?.file;
         if (filterKeyAlpha2MappingFile == undefined) return;
 
         const values = Array.isArray(filterValues) ? filterValues : [filterValues];
         values.forEach(value => {
-            if (filterKey === "countrycode") {
+            if (filterKey === "alpha2code") {
                 addAlpha2CodesToSet(value);
             } else {
                 addAlpha2CodesToSet(filterKeyAlpha2MappingFile[value]);
             }
         });
     });
-
     return Array.from(alpha2CodesSet);
 }
 
@@ -47,6 +46,8 @@ function getValidFilters(filters: searchItemsType): ValidFilter[] {
             return { key: normalizedKey, value: filterValue };
         })
         .filter(({ key, value }) => {
+
+
             const isValidKey = key in valuesAlpha2MappingFiles;
             const isValidValue =
                 value !== undefined &&

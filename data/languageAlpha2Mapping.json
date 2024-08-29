@@ -66,7 +66,9 @@
     "CK",
     "SZ",
     "HM",
-    "SH"
+    "SH",
+    "GS",
+    "SS"
   ],
   "French": [
     "FR",
@@ -108,7 +110,8 @@
     "TF",
     "WF",
     "YT",
-    "MU"
+    "MU",
+    "NC"
   ],
   "Spanish": [
     "ES",
@@ -278,8 +281,7 @@
     "MK"
   ],
   "Albanian": [
-    "AL",
-    "XK"
+    "AL"
   ],
   "Lithuanian": [
     "LT"
