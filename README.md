@@ -1,14 +1,25 @@
 
 # 🌍 Countries Data Kit "BETA"
 
-`countries-data-kit` is a versatile JavaScript package designed to provide detailed information about world countries. Whether you're working in a Node.js backend, React, React Native, or a web browser, this package delivers a comprehensive set of country details following the ISO 3166 standard for countries, as well as relevant ISO standards for languages and currencies.
+`countries-data-kit` is a robust JavaScript package designed to provide detailed information about world countries. This package delivers a comprehensive set of country details following the ISO 3166 standard for countries, as well as relevant ISO standards for languages and currencies.
 
-## ✨ Features
+## ✨ Key Features
 
-- **🔧 Wide Compatibility**: Runs seamlessly in Node.js, React, React Native, and browser environments.
-- **📚 Comprehensive Data**: Provides extensive details about world countries, including codes, capitals, currencies, languages, and more.
-- **📏 ISO Standards Compliance**: Adheres to ISO 3166 for countries, ISO 4217 for currencies, and ISO 639 for languages.
-- **🔍 Flexible Filtering**: Filter data by over 10 different criteria to get precisely the information you need.
+- 🔧 **Wide Compatibility**: Runs seamlessly in Node.js, React, React Native, and browser environments.
+- 📚 **Comprehensive Data**: Provides extensive details about world countries, including codes, capitals, currencies, languages, and more.
+- 📏 **ISO Standards Compliance**: Adheres to ISO 3166 for countries, ISO 4217 for currencies, and ISO 639 for languages.
+- 🔍 **Flexible Filtering**: Filter data by over 10 different criteria to get precisely the information you need.
+- 🌍 **Retrieve Country Data**: Get detailed info like name, codes, and capital.
+- 🌎 **Filter by Continent**: List countries by continent.
+- 💱 **Fetch Currency Details**: Access currency name, code, and symbol.
+- ☎️ **Get Dialing Codes**: Obtain international dialing codes.
+- 🇺🇳 **Display Flag Emojis**: Show flag emojis for countries.
+- 🗣️ **Provide Language Info**: Get the primary language of a country.
+- 🔤 **Filter by Country Codes**: Use alpha-2 or alpha-3 codes for filtering.
+- 🚨 **Access Emergency Numbers**: Retrieve emergency contact numbers.
+- 🚗 **Driving Side Info**: Know if a country drives on the left or right.
+- 📞 **Generate Phone Number Masks**: Standardize phone number formats.
+
 
 ## 📦 Installation
 
@@ -196,6 +207,7 @@ const euroCountries = getCountries({
     })
 console.log(euroCountries.map(c => c.countryName)); // List of countries using the Euro
 ```
+
 
 ## 🤝 Contributing
 
