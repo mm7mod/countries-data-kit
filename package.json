@@ -1,7 +1,7 @@
 {
   "name": "countries-data-kit",
-  "version": "1.1.6",
-  "description": "This is a package for countries data",
+  "version": "1.1.12",
+  "description": "Country data with advanced filters: ISO codes, capitals, continents, currencies, dialing codes, flags, emergency numbers, and phone masking. Tiny package, compatible with backend and frontend JS frameworks",
   "main": "dist/CountryDetails.js",
   "module": "dist/CountryDetails.mjs",
   "types": "dist/CountryDetails.d.ts",

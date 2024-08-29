@@ -1,24 +1,17 @@
 
 # 🌍 Countries Data Kit "BETA"
 
-`countries-data-kit` is a robust JavaScript package designed to provide detailed information about world countries. This package delivers a comprehensive set of country details following the ISO 3166 standard for countries, as well as relevant ISO standards for languages and currencies.
+`countries-data-kit` is a powerful, minimal-sized JavaScript package offering over 15 types of detailed country information with advanced filtering options. It adhers to ISO 3166 for countries, ISO 4217 for currencies, and ISO 639 for languages.
 
 ## ✨ Key Features
 
 - 🔧 **Wide Compatibility**: Runs seamlessly in Node.js, React, React Native, and browser environments.
-- 📚 **Comprehensive Data**: Provides extensive details about world countries, including codes, capitals, currencies, languages, and more.
+  
+- 📚 **Comprehensive Data**: Fetch Currency Details, Get Dialing Codes, Display Flag Emojis, Provide Language Info, Access Emergency Numbers, Driving Side Info, Get Phone Number Masks
+  
 - 📏 **ISO Standards Compliance**: Adheres to ISO 3166 for countries, ISO 4217 for currencies, and ISO 639 for languages.
+
 - 🔍 **Flexible Filtering**: Filter data by over 10 different criteria to get precisely the information you need.
-- 🌍 **Retrieve Country Data**: Get detailed info like name, codes, and capital.
-- 🌎 **Filter by Continent**: List countries by continent.
-- 💱 **Fetch Currency Details**: Access currency name, code, and symbol.
-- ☎️ **Get Dialing Codes**: Obtain international dialing codes.
-- 🇺🇳 **Display Flag Emojis**: Show flag emojis for countries.
-- 🗣️ **Provide Language Info**: Get the primary language of a country.
-- 🔤 **Filter by Country Codes**: Use alpha-2 or alpha-3 codes for filtering.
-- 🚨 **Access Emergency Numbers**: Retrieve emergency contact numbers.
-- 🚗 **Driving Side Info**: Know if a country drives on the left or right.
-- 📞 **Generate Phone Number Masks**: Standardize phone number formats.
 
 
 ## 📦 Installation
@@ -37,6 +30,14 @@ yarn add countries-data-kit
 
 ## 🚀 Usage
 
+The main function, `getCountries({ fields:[], filters:{}|[] })`, retrieves country details based on two parameters:
+
+1. **fields**: Specify which country data you want, such as mobile number mask, capital, or dialing code. Use the `CFields` enum or pass a string array.
+
+2. **filters**: Define criteria to filter countries, like continent, alpha-2/alpha-3 code, name, or dialing number.
+
+This setup gives you control over the data you receive and how countries are selected.
+
 ### Importing the Package
 
 #### For Node.js:
@@ -52,22 +53,158 @@ const { getCountries, SFields, CFields } = require('countries-data-kit');
 import { getCountries, CFields, SFields } from 'countries-data-kit';
 ```
 
-### 🛠 Example Usage
 
-Here’s an example of how to use the package to get country details:
+
+## 📚 Examples
+
+### Example 1: Retrieve All Countries with Full Data
+
+To get data for all 249 countries, simply call the `getCountries` function:
 
 ```javascript
-const { getCountries, SFields, CFields } = require('countries-data-kit');
-
-function getCountryDetails() {
-    return getCountries({
-        fields: [CFields.alpha2Code, CFields.alpha3Code, CFields.capitalCity],
-        filters: [SFields.continentNames.Africa]
-    })
-}
+const countries = getCountries();
+or
+const countries = getCountries({});
 ```
 
-### 📋 Available Data Fields
+
+-----
+
+### Example 2: Select Specific Fields to Retrieve
+
+If you only need certain fields, such as phone number details, you can specify them using the `fields` parameter:
+
+```javascript
+const countriesPhoneNumberDetails = getCountries({
+    fields: [
+        CFields.dialingCode,
+        CFields.phoneNumberMask
+    ]
+});
+```
+Alternatively, you can pass them as strings:
+
+```javascript
+const countriesPhoneNumberDetails = getCountries({
+    fields: [
+        "dialingCode",
+        "phoneNumberMask"
+    ]
+});
+```
+
+-----
+
+### Example 3: Filter Countries by Specific Criteria
+
+To filter countries by certain criteria, such as continent or country code, use the `filters` parameter.
+
+Get all Asian and European countries:
+
+```javascript
+const asianCountries = getCountries({
+    filters: [
+        SFields.continentNames.Asia
+    ]
+});
+```
+or 
+```javascript
+const asianCountries = getCountries({
+    filters: {
+        continentName:"Asia"
+    }
+});
+```
+or 
+```javascript
+const asianCountries = getCountries({
+    filters: {
+        continentName:["Asia"]
+    }
+});
+
+```
+
+You can also filter by specific country codes:
+
+```javascript
+let countries = getCountries({
+    filters: {
+        alpha2Code: ["US", "CA", "EG", "JP"]
+    }
+});
+```
+
+-----
+
+### Example 4: Combine Filters and Fields for Specific Data
+
+You can combine `fields` and `filters` to retrieve specific data. For example, to get the capital city of Germany:
+
+```javascript
+let countries = getCountries({
+    fields: [CFields.capitalCity],
+    filters: [SFields.countryNames.Germany]
+});
+```
+or 
+```javascript
+let countries = getCountries({
+    fields: [
+        CFields.capitalCity
+    ],
+    filters: {
+        countryName: "Germany"
+    }
+});
+```
+
+Retrieve in which continents specific countries exist based on their alpha3 codes:
+
+```javascript
+let countries = getCountries({
+    fields: [
+        CFields.continentName
+    ],
+    filters: {
+        alpha3Code: ["DZA", "AUT"]
+    }
+});
+```
+
+-----
+
+### Example 5: Mix Multiple Filters for Complex Queries
+
+You can apply multiple filters to retrieve data that meets several criteria. For example, to get all countries with Cairo as the capital, a specific flag, and those that use the Euro:
+
+```javascript
+let countries = getCountries({
+    fields: [CFields.continentName],
+    filters: [
+        SFields.capitalCities.Cairo,
+        SFields.flagEmojis["🇺🇸"],
+        SFields.currencyCodes.EUR
+    ]
+});
+```
+or 
+```javascript
+let countries = getCountries({
+    fields:[CFields.continentName],
+    filters:{
+        capitalCity:"Cairo",
+        flagEmoji:"🇺🇸",
+        currencyCode:"EUR"
+    }
+})
+
+```
+the above call will return all countries that use Euro + Egypt + USA 
+
+
+## 📋 Available Data Fields
 
 The package provides the following data fields: **CFields**
 
@@ -94,7 +231,7 @@ The package provides the following data fields: **CFields**
 
 
 
-### Filtering Methods
+## 🔍  Filtering Methods
 
 #### 1. **Filter Using an Array of `SFields` Values**:
 This method allows you to filter countries by providing an array of values from the `SFields` mappings.
@@ -156,57 +293,6 @@ This method provides more control by allowing you to specify filters as key-valu
   | `primaryLanguage`     | `["English", "Arabic"]`                           |
 
 
-
-
-### 🔍 Filtering Countries
-
-You can filter countries based on various criteria, such as continent, currency, or language.
-
-```javascript
-    return getCountries({
-        fields: [CFields.alpha2Code, CFields.alpha3Code, CFields.capitalCity],
-        filters: [SFields.continentNames.Africa, SFields.capitalCities['Addis Ababa']]
-    })
-```
-
-```javascript
-function getCountryDetails() {
-    return getCountries({
-        fields: [CFields.alpha2Code, CFields.alpha3Code, CFields.capitalCity,CFields.dialingCode˝],
-        filters: {
-            continentName:["Africa", "Asia"],
-            flagEmoji:["🇦🇫","🇧🇩","🇧🇧","🇧🇹"]
-        }
-    })
-}
-```
-
-## 📚 Examples
-
-### Example 1: Get all 249 countries with all their data
-
-```javascript
-const country = getCountryDetails();
-console.log(country.countryName); // "India"
-```
-
-### Example 2: Filter Countries by Continent
-
-```javascript
-const europeanCountries = getCountries({
-        filters: [SFields.continentNames.Europe]
-    })
-console.log(europeanCountries.length); // Outputs the number of European countries
-```
-
-### Example 3: Get Countries with a Specific Currency
-
-```javascript
-const euroCountries = getCountries({
-        filters: [SFields.currencyCodes.EUR]
-    })
-console.log(euroCountries.map(c => c.countryName)); // List of countries using the Euro
-```
 
 
 ## 🤝 Contributing
