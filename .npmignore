@@ -1,0 +1,11 @@
+.github/
+test/
+src/
+scripts/
+.changeset/
+data/
+node_modules/
+package-lock.json
+tsconfig
+tsup.config.ts
+.npmignore
