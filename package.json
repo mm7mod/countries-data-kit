@@ -1,6 +1,6 @@
 {
   "name": "countries-data-kit",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "This is a package for countries data",
   "main": "dist/CountryDetails.js",
   "module": "dist/CountryDetails.mjs",
