@@ -12,7 +12,7 @@ type CountryData = {
 };
 
 
-export default function getCountries(options?: GetCountriesParams): Partial<CountryData>[] {
+function getCountries(options?: GetCountriesParams): Partial<CountryData>[] {
     if (!options)
         return getAllCountriesFullData();
 
@@ -134,7 +134,10 @@ function getCountryFullData(Alpha2Code: string): CountryData | undefined {
 }
 
 
-export {
+module.exports = {
+    getCountries,
     CFields,
-    SFields
-}
+    SFields,
+};
+
+export { getCountries, CFields, SFields };

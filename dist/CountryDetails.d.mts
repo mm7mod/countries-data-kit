@@ -2437,4 +2437,4 @@ type CountryData = {
 };
 declare function getCountries(options?: GetCountriesParams): Partial<CountryData>[];
 
-export { CFields, SFields, getCountries as default };
+export { CFields, SFields, getCountries };

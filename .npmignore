@@ -9,3 +9,4 @@ package-lock.json
 tsconfig
 tsup.config.ts
 .npmignore
+tsconfig.ts

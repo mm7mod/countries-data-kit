@@ -1,6 +1,6 @@
 {
   "name": "countries-data-kit",
-  "version": "1.1.3",
+  "version": "1.1.6",
   "description": "This is a package for countries data",
   "main": "dist/CountryDetails.js",
   "module": "dist/CountryDetails.mjs",
@@ -24,5 +24,38 @@
     "jsonminify": "^0.4.2",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4"
-  }
+  },
+  "keywords": [
+    "countries",
+    "ISO 3166",
+    "ISO 4217",
+    "ISO 639",
+    "country data",
+    "world countries",
+    "JavaScript",
+    "Node.js",
+    "React",
+    "React Native",
+    "country details",
+    "currencies",
+    "languages",
+    "capitals",
+    "continents",
+    "alpha2 Code",
+    "alpha3 Code",
+    "capital Cities",
+    "continent Names",
+    "country Names",
+    "currency",
+    "currency Code",
+    "currency Symbol",
+    "number dialing Code",
+    "driving Side",
+    "emergency Numbers",
+    "flag Emoji",
+    "flag SVG Url",
+    "numeric Country Code",
+    "phone Number Mask",
+    "primary Language"
+  ]
 }
