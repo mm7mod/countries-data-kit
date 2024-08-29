@@ -1,7 +1,7 @@
 {
   "name": "countries-data-kit",
   "version": "1.1.1",
-  "description": "this is a package for countries data ",
+  "description": "This is a package for countries data",
   "main": "dist/CountryDetails.js",
   "module": "dist/CountryDetails.mjs",
   "types": "dist/CountryDetails.d.ts",
@@ -10,6 +10,10 @@
     "lint": "tsc",
     "test": "jest",
     "release": "pnpm run build && changeset publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mm7mod/countries-data-kit"
   },
   "author": "",
   "license": "MIT",
